@@ -15,8 +15,8 @@ else if(wiek<15){
     document.write("Nie jesteś pełnoletni<br>")
 }
 var x, y;
-x = 10;
-y = 5;
+x = 6;
+y = 4;
 var suma = x + y;
 var roznica = x - y;
 var dzielenie;
