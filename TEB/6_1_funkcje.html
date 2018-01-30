@@ -24,7 +24,7 @@
     <script>
         document.write("Pole: "+ poleObjetosc(2,3,4)[0] + "cm<sup>2</sup>");
         document.write("<br>" +"Objętość:" + poleObjetosc(2,3,4)[1] + "cm<sup>3</sup>")
-        console.log(poleObjetosc(2,3,4));
+
 
         var a =prompt("Podaj szerokość: ");
         var b =prompt("Podaj długośc: ");
@@ -32,6 +32,21 @@
         var x =prompt("Podaj wartość:", "0 - pole, 1 - objętość");
         document.write(poleObjetosc(a,b,h)[x]);
 
+        function poleObjętości(a,b,h){
+                var pole = a*b;
+                var objentosc = pole * h;
+                var wynik = [pole, objentosc];
+                return wynik;
+            }
+
+            if(x==0){
+               document.write("Pole:" + poleObjetosc(a,b,h) [x] + "cm<sup>2</sup><br>");
+           }else if(x==1){
+               document.write("Objentosc: " + poleObjetosc(a,b,h)[x] + "cm<sup>2</sup>");
+           }else{
+               document.write("Podałeś błędne dane 😞");
+           }
+            //document.write(poleObjętości(a,b,h)[x]);
 
 
     </script>
