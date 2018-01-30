@@ -82,7 +82,7 @@ document.write("Pole kwadratu wynosi: " + pole + "cm<sup>2</sup>");
 
 
 
-//napisz program obliczający pole trójkąta
+//napisz program obliczający pole trójkąta0
 
 
 

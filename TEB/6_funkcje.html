@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>tytuł</title>
+        <link rel="stylesheet" href="style/style1.css">
+
+    </head>
+
+    <body>
+        <script>
+            function witaj(imie){
+                document.write("Witaj " + imie + "<br>");
+            }
+
+        function poleKwadratu1(bok){
+           var pole = bok * bok;
+            document.write("Pole Wynosi: " + pole + "cm<sup>2</sup>" + "<br>")
+        }
+
+             function poleKwadratu2(bok){
+            var pole = bok * bok;
+                 return pole;
+        }
+                function poleKwadratu(bok){
+            document.write("Pole Wynosi: " + bok * bok + "cm<sup>2</sup>")
+        }
+
+        witaj("Janusz"); // wywołanie funkcji
+
+        var x = "Anna";
+        witaj(x);
+
+        var imie1 = prompt("Podaj Swoje Imię");
+        witaj(imie1);
+
+        poleKwadratu(4);
+        poleKwadratu1
+        alert(poleKwadratu2(5));
+
+
+
+            function poleProstokata(a,b){
+                return a*b;
+            }
+        var bok1, bok2 ,poleProst;
+            bok1 = prompt("Podaj bok a: ");
+            bok2 = prompt("Podaj bok b: ");
+            poleProst =poleProstokata(bok1,bok2);
+            console.log(poleProst);
+            document.write("<br>" +"Pole Prostokąta Wynosi: " + poleProst + "cm<sub>2</sub>");
+
+            //##################################################################################################
+            function poleTrojkata(c,h){
+                return (c*h)/2
+            }
+            var podstawa, wysokosc, poleTroj;
+            podstawa = prompt("POdaj Podstawę: ");
+            wysokosc = prompt("POdaj Wysokość: ");
+            poleTroj = poleTrojkata(podstawa, wysokosc);
+            document.write("<br>" + "Pole trójkąta Wynosi: "+ poleTroj + "cm<sub>2</sub>");
+
+
+
+        </script>
+
+
+
+
+
+
+    </body>
+
+
+
+
+
+
+</html>
+
+
