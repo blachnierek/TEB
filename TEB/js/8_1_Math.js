@@ -2,8 +2,8 @@ var pi = Math.PI;
 console.log(pi);
 
 //pierwiastek
-var x= prompt("Podaj warość");
-console.log(Math.sqrt(x));
+/*var x= prompt("Podaj warość");
+console.log(Math.sqrt(x));*/
 var a= 13.2;
 var b= 28.5;
 var c= 1;
@@ -70,6 +70,62 @@ var j = 10.1234567890;
 console.log(typeof(j)); //number
 j = j.toPrecision(4);
 console.log(j); //
+
+
+//losuj piczby z przedziału 0 10
+
+var l = Math.floor(Math.random() * 11);
+console.log(l);
+
+//losuj liczbę z przedziału <10;20>
+
+
+var g = Math.floor(Math.random()* 11 + 10);
+console.log(g);
+
+
+//losuj liczbę z przedziału <31;50>
+
+
+var d = Math.floor(Math.random()*20 + 31);
+console.log(d);
+
+//############################################################################################
+
+//zadanie
+/*Użytkownik zaznacza jedno z dwóch pól radio,
+    pierwsze pole to jest obwód
+    drugie pole to jest pole */
+
+
+
+
+    var elBok = document.getElementById("bok");
+    var elObwod = document.getElementById("obwod");
+    var elPole = document.getElementById("pole");
+    var elPrzycisk = document.getElementById("przycisk");
+    var elKomunikat = document.getElementById("komunikat");
+    var obwod;
+    var pole;
+
+function oblicz(){
+    if(elObwod.checked){
+        if(elBok.value > 0){
+        obwod = 4 * elBok.value;
+        obwod = obwod.toFixed(2);
+        elKomunikat.innerHTML = "Obwód kwadratu wynosi: " + obwod;
+
+    }else{
+        elKomunikat.innerHTML ="Błędna długośc boku";
+        elBok.focus();
+        elBok.value="";
+    }
+    }
+}
+     elPrzycisk.addEventListener("click", oblicz);
+
+
+
 
 
 
