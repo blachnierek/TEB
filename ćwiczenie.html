@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>tytuł</title>
+        <link rel="stylesheet" href="TEB/style/style.css">
+
+
+    </head>
+
+    <body>
+        <form>
+       <br> Podaj Pierwszą Przekątną: <input type="number" id="pierwsza"><br><br>
+        Podaj Drugą Przekątną: <input type="number" id="druga"><br><br>
+
+        </form>
+        <button id="gozik">Wynik</button><br><br>
+        <div id="komunikat"></div>
+        <script>
+        var elPierwsza = document.getElementById("pierwsza");
+        var elDruga = document.getElementById("druga");
+        var elKomunikat = document.getElementById("komunikat");
+        var gozik = document.getElementById("gozik");
+            function puste(){
+                if(elPierwsza.value.length ==0 || elDruga.value.length ==0){
+                    elKomunikat.innerHTML = "Wpisz przekątne!";
+
+
+
+                }else{
+                    elKomunikat.innerHTML= "Wynik Wynosi:" + elPierwsza.value * elDruga.value /2;
+
+                }
+            }
+
+
+
+
+
+            gozik.addEventListener("click", puste);
+
+
+
+
+
+
+
+        </script>
+
+
+
+
+
+    </body>
+
+
+
+
+
+
+</html>
+
+
