@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="utf-8">
+        <title>POTĘGOWANIE</title>
+        <link rel="stylesheet" href="style/styl.css">
+
+    </head>
+        <body>
+            <div id="baner"><a href="index.html"><img src="baner1.jpg"></a></div>
+
+            <div id="menu">Menu
+
+                <ul>
+                    <li><a href="strona1.html">- Proste działania</a></li>
+                    <li><a href="strona2.html">- Podęgowanie</a></li>
+                </ul>
+
+            </div>
+            <div id="tresc">
+                <h1>Potęgowanie</h1>
+                    <form>
+                        Podaj podstawę potęgi: <input type="number" id="podstawa"><br>
+                        Podaj dodatni, całkowity wykładnik potęgi: <input type="number" id="wykladnik"><br>
+
+                    </form><br>
+                    <button id="przycisk">Potęgowanie</button><br><br>
+                <div id="komunikat">
+
+                </div>
+                <script>
+                    var elPodstawa = document.getElementById("podstawa");
+                    var elWykladnik = document.getElementById("wykladnik");
+                    var elPrzycisk = document.getElementById("przycisk");
+                    var elKomunikat = document.getElementById("komunikat");
+                    var potega;
+                    function puste(){
+                        if(elPodstawa.value.length !=0 && elWykladnik.value.length !=0){
+                            elKomunikat.innerHTML = "";
+                            if(elWykladnik.value < 0 ){
+                                    elKomunikat.innerHTML = "Wykładnik musi byc dodatni!";
+                            }else{
+                                potega = Math.pow(elPodstawa.value, elWykladnik.value);
+                                elKomunikat.innerHTML = "Wynik działania wynosi: " + potega;
+                            }
+
+                                 }else{
+                            elKomunikat.innerHTML = "Wpisz podstawę i wykładnik";
+                        }
+                    }
+                    elPrzycisk.addEventListener('click',puste);
+
+
+
+                </script>
+
+
+
+            </div>
+
+
+
+
+        </body>
+
+
+</html>

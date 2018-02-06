@@ -1,81 +1,126 @@
 <!DOCTYPE html>
 <html>
-<head>
- <meta charset="utf-8">
-    <title>PROSTE DZIAŁANIA</title>
-    <link rel="stylesheet" href="style/styl.css">
-</head>
-<body>
-    <div id="baner"><img src="baner1.jpg"></div>
+    <head>
+            <meta charset="utf-8">
+        <title>PROSTE DZIAŁANIA</title>
+        <link rel="stylesheet" href="style/styl.css">
 
-    <div id="menu">XDDD</div>
-    <div id="tresc">
-        <h1>PROSTE DZIAŁANIA</h1>
-    <form>
-    Podaj pierwszą liczbę: <input type="number" id="pierwsza"><br><br>
-        Podaj drugą liczbę: <input type="number" id="druga"><br><br>
-    </form>
-    <button id="dodawanie">dodawanie</button>
-    <button id="odejmowanie">odejmowanie</button>
-    <button id="mnozenie">mnożenie</button>
-    <button id="dzielenie">dzielenie</button><br><br>
-    <div id="komunikat"></div>
-    <script>
-        var elPierwsza =document.getElementById("pierwsza");
-        var elDruga =document.getElementById("druga");
-        var elDodawanie = document.getElementById("dodawanie");
-        var elOdejmowanie = document.getElementById("odejmowanie");
-        var elMnozenie = document.getElementById("mnozenie");
-        var elDzielenie = document.getElementById("dzielenie");
-        var elKomunikat = document.getElementById("komunikat");
+    </head>
+        <body>
+            <div id="baner"><a href="index.html"><img src="baner1.jpg"></a></div>
 
-         function puste(){
-            if (elPierwsza.value.length == 0 || elDruga.value.length == 0){
-                elKomunikat.innerHTML = "Proszę uzupełnić obie liczby.";
-            }else{
-                elKomunikat.innerHTML = "";
-            }
+            <div id="menu">Menu
 
-        }
-        function dodawanie(){
-            if(elPierwsza.value.length !=0 && elDruga.value.length !=0){
-            var x = parseFloat(elPierwsza.value);
-            var y = parseFloat(elDruga.value);
-            elKomunikat.innerHTML = x + y;
-            } }
+                <ul>
+                    <li><a href="strona1.html">- Proste działania</a></li>
+                    <li><a href="strona2.html">- Podęgowanie</a></li>
+                </ul>
 
+            </div>
+            <div id="tresc">
+                <h1>PROSTE DZIAŁANIA</h1>
+                <form>
+                    Podaj pierwszą liczbę:<input type="number" id="pierwsza">
+                    <br><br>
+                    Podaj drugą liczbę:<input type="number" id="druga">
+                    <br><br>
 
+                </form>
+                    <button id="dodawanie">Dodawanie</button>
+                    <button id="odejmowanie">Odejmowanie</button>
+                    <button id="mnozenie">Mnożenie</button>
+                    <button id="dzielenie">Dzielenie</button>
+                <div id="komunikat"></div><br><br>
+                                <script>
+                                var elPierwsza = document.getElementById("pierwsza");
+                                var elDruga = document.getElementById("druga");
+                                var elDodawanie = document.getElementById("dodawanie");
+                                var elOdejmowanie = document.getElementById("odejmowanie");
+                                var elMnozenie = document.getElementById("mnozenie");
+                                var elDzielenie = document.getElementById("dzielenie");
+                                var elKomunikat = document.getElementById("komunikat");
+                                var dzielenie
 
-        elDodawanie.addEventListener('click', puste);
-        elOdejmowanie.addEventListener('click', puste);
-        elMnozenie.addEventListener('click', puste);
-        elDzielenie.addEventListener('click', puste);
+                                    function puste(){
+                                        if(elPierwsza.value.length == 0 || elDruga.value.length == 0){
+                                            elKomunikat.innerHTML = "Proszę uzupelnić obie liczby";
+                                        }else{
+                                            elKomunikat.innerHTML = "";
+                                        }
+                                    }
 
-        elDodawanie.addEventListener('click', dodawanie);
+                                    function dodawanie(){
+                                        if(elPierwsza.value.length !=0 && elDruga.value.lenght !=0)
+                                            var x = parseFloat(elPierwsza.value);
+                                            var y = parseFloat(elDruga.value);
+                                            elKomunikat.innerHTML = x + y;
 
-
-
-
-    </script>
-
-
-
-
-    </div>
+                                    }
 
 
 
 
 
 
+                                    function odejmowanie(){
+                                        if(elPierwsza.value.length !=0 && elDruga.value.lenght !=0)
+                                            var x = parseFloat(elPierwsza.value);
+                                            var y = parseFloat(elDruga.value);
+                                            elKomunikat.innerHTML = x - y;
 
-</body>
+                                    }
+
+
+
+                                    function mnozenie(){
+                                        if(elPierwsza.value.length !=0 && elDruga.value.lenght !=0)
+                                            var x = parseFloat(elPierwsza.value);
+                                            var y = parseFloat(elDruga.value);
+                                            elKomunikat.innerHTML = x * y;
+
+                                    }
+
+                                    function dzielenie(){
+                                        if(elPierwsza.value.length !=0 && elDruga.value.lenght !=0 )
+                                            var x = parseFloat(elPierwsza.value);
+                                            var y = parseFloat(elDruga.value);
+
+                                        if(y != 0){
+
+                                            dzielenie = x /y;
+                                           dzielenie = dzielenie.toFixed(2);
+                                             elKomunikat.innerHTML = dzielenie;
+                                        }
+                                        else
+                                            elKomunikat.innerHTML = "Nie wolno dzielić przez zero !";
+
+                                    }
+
+
+
+
+                                elDodawanie.addEventListener('click', puste);
+                                elOdejmowanie.addEventListener('click', puste);
+                                elMnozenie.addEventListener('click', puste);
+                                elDzielenie.addEventListener('click', puste);
+
+                                elDodawanie.addEventListener('click', dodawanie);
+                                elOdejmowanie.addEventListener('click', odejmowanie);
+                                elMnozenie.addEventListener('click', mnozenie);
+                                elDzielenie.addEventListener('click', dzielenie);
 
 
 
 
 
+                                </script>
 
+            </div>
+
+
+
+
+        </body>
 
 
 </html>
