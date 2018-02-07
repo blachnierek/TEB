@@ -46,6 +46,94 @@ function wyswietl(){
     elKomunikat.innerHTML = tekst + "<br>";
 }
 elGozik.addEventListener("click", wyswietl);
+//################################################################################
+//break
+
+for(var n = 10; n >= 5; n--){
+    document.write(n + " ");
+    if(n==7)
+        break
+}
+document.write("<br>")
+
+
+//continue
+
+for(var o = 14; o < 20; o++){
+    if(o==15 || o==18)
+        continue;
+    document.write(o + " ");
+
+}
+
+//#######################################
+/*
+Wyświetl na ekranie:
+*
+**
+***
+****
+*****
+*/
+document.write("<br><br>");
+
+
+var p;
+/*var r;
+for(p = 1; p <= 50; p++){
+    for(r = 1; r <= p; r++){
+        document.write("*");
+    }
+
+    document.write("<br>");
+}*/
+
+
+var gozik2 =document.getElementById("gozik2");
+var elWiersz =document.getElementById("wiersz");
+var elZnak =document.getElementById("znak");
+var elKom =document.getElementById("kom");
+var ilosc;
+var znak;
+var c;
+var d;
+
+function znak(){
+    ilosc = elWiersz.value;
+    znak = elZnak.value;
+    for(c = 1; c <= ilosc; c++){
+        for(n = 1; n <= c; n++){
+            document.write(znak);
+        }
+        document.write("<br>")
+    }
+}
+gozik2.addEventListener("click", znak);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
