@@ -27,7 +27,7 @@ document.write("<br>");*/
 //użytkownik z klawiatury w formularzu podaje jaki liczby mają być wyświetlone tzn wartość początkową i końcową
 //wartości mają być roznące i zwiększane o 1
 
-var elPoczatek = document.getElementById("poczatek");
+/*var elPoczatek = document.getElementById("poczatek");
 var elKoniec = document.getElementById("koniec");
 var elGozik = document.getElementById("gozik");
 var elKomunikat = document.getElementById("komunikat");
@@ -45,11 +45,11 @@ function wyswietl(){
         }
     elKomunikat.innerHTML = tekst + "<br>";
 }
-elGozik.addEventListener("click", wyswietl);
+elGozik.addEventListener("click", wyswietl);*/
 //################################################################################
 //break
 
-for(var n = 10; n >= 5; n--){
+/*for(var n = 10; n >= 5; n--){
     document.write(n + " ");
     if(n==7)
         break
@@ -64,7 +64,7 @@ for(var o = 14; o < 20; o++){
         continue;
     document.write(o + " ");
 
-}
+}*/
 
 //#######################################
 /*
@@ -89,6 +89,7 @@ for(p = 1; p <= 50; p++){
 }*/
 
 
+/*
 var gozik2 =document.getElementById("gozik2");
 var elWiersz =document.getElementById("wiersz");
 var elZnak =document.getElementById("znak");
@@ -109,6 +110,44 @@ function znak(){
     }
 }
 gozik2.addEventListener("click", znak);
+
+*/
+
+
+/*
+
+var x =0
+var y =0
+var wynikDodawania
+while(x >= y){
+    x = (prompt("Podaj x"));
+    y= (prompt("Podaj y"));
+
+
+      }
+console.log("x=" + x);
+console.log("y=" + y);
+wynikDodawania = x + y;
+console.log("x + y= " + wynikDodawania);
+
+*/
+
+
+//DO WHILE
+
+var wiek;
+do{
+    wiek = prompt("Podaj wiek!");
+    if(wiek >=18){
+        document.write('<a href="http://wp.pl">wp.pl</a>')
+    }
+}while(wiek <=18)
+
+
+
+
+
+
 
 
 
