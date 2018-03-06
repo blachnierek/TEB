@@ -4,14 +4,27 @@ pod polem wyświetl komunikat czy dane zostały prawidłowo wprowadzone
 Jeśli będą prawidłowe dane to wyświetl komunikat o treści "prawidłowy kod pocztowy: ....."
 jeśli będzie błędny to wyświetl komunikat "błędny kod pocztowy" i umieśc kursor w polu tekstowym*/
 
-
-var gozik = document.getElementById("gozik");
-var kod = document.getElementById("kod");
-var regula = (kod.value);
-regula = "/^\d{2}-\d{3}$/";
-var wynik = regula.test(regula);
-
+var elKod = document.getElementById("kod");
+var elKomunikat = document.getElementById("komunikat");
+var przycisk = document.getElementById("przycisk");
+var regKod = /\d{2}-\d{3}/;
+var regMail = /^[a-z]{1}[\w|\.|\-]{0,30}@(\w{1,20}\.){1,3}[a-z]{1,3}$/;
 
 
-console.log(wynik);
+function sprawdz(){
+    let kod = elKod.value;
+    let sprKod = regKod.test(kod);
+    if(sprKod){
+        //prawda
+        elKomunikat.innerHTML = "Prawidłowy kod pocztowy: " +kod;
+    }else{
+        //błąd
+        elKomunikat.innerHTML = "Błędny kod pocztowy:";
+        elKod.focus(); //przenosi kursor do pola
+        elKod.value =""; //jeśli jest błędny to czyści pole
 
+    }
+
+}
+
+przycisk.addEventListener("click", sprawdz);
