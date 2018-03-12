@@ -1,8 +1,8 @@
-/*var elImie = document.getElementById('imie');
+var elImie = document.getElementById('imie');
 var elNazwisko = document.getElementById('nazwisko');
 var elLogin = document.getElementById('login');
 var elMail1 = document.getElementById('mail1');
-var elMail2 = document.getElementById('mail2');*/
+var elMail2 = document.getElementById('mail2');
 var elPass1 = document.getElementById('pass1');
 var elPass2 = document.getElementById('pass2');
 var elData = document.getElementById('data');
@@ -23,7 +23,7 @@ var regPassSlabe1 = /^\d{4,}$/;
 var regPassSlabe2 = /^[a-z]{4,}$/;
 var regPassSlabe2 = /^[A_Z]{4,}$/;
 var regPassSlabe4 = /^[A-Z]|[a-z]|[0-9]{4,}$/;
-/*
+
 
 elImie.onblur = function(){
     if(elImie.value.length >= 2){
@@ -32,7 +32,7 @@ elImie.onblur = function(){
         elKomunikat.innerHTML = 'Błędne dane!';
     }
 }
-*/
+
 
 function sprawdzImie(){
     let imie = elImie.value;
@@ -173,11 +173,11 @@ function sprawdzRegulamin(){
 
 
 
-/*elImie.addEventListener('blur',sprawdzImie);
+elImie.addEventListener('blur',sprawdzImie);
 elNazwisko.addEventListener('blur',sprawdzNazwisko);
 elLogin.addEventListener('blur',sprawdzLogin);
 elMail1.addEventListener('blur',sprawdzMail);
-elMail2.addEventListener('blur',blokujmail);*/
+elMail2.addEventListener('blur',blokujmail);
 elPass1.addEventListener('blur',sprawdzPass);
 elPass2.addEventListener('blur',blokujpass);
 elPrzycisk2.addEventListener('click',odblokuj);

@@ -7,11 +7,13 @@ jeśli będzie błędny to wyświetl komunikat "błędny kod pocztowy" i umieśc
 var elKod = document.getElementById("kod");
 var elKomunikat = document.getElementById("komunikat");
 var przycisk = document.getElementById("przycisk");
+var przycisk0 = document.getElementById("przycisk1");
+var elMail = document.getElementById("mail");
 var regKod = /\d{2}-\d{3}/;
 var regMail = /^[a-z]{1}[\w|\.|\-]{0,30}@(\w{1,20}\.){1,3}[a-z]{1,3}$/;
 
 
-function sprawdz(){
+function sprawdzKod(){
     let kod = elKod.value;
     let sprKod = regKod.test(kod);
     if(sprKod){
@@ -19,7 +21,7 @@ function sprawdz(){
         elKomunikat.innerHTML = "Prawidłowy kod pocztowy: " +kod;
     }else{
         //błąd
-        elKomunikat.innerHTML = "Błędny kod pocztowy:";
+        elKomunikat.innerHTML = "Błędny kod pocztowy!";
         elKod.focus(); //przenosi kursor do pola
         elKod.value =""; //jeśli jest błędny to czyści pole
 
@@ -27,4 +29,17 @@ function sprawdz(){
 
 }
 
-przycisk.addEventListener("click", sprawdz);
+function sprawdzMail(){
+    let mail = elMail.value;
+    let sprMail = regMail.test(mail);
+    if(sprMail){
+        elKomunikat.innerHTML = "Prawidłowy mail: " + mail;
+    }else{
+        elKomunikat.innerHTML = "Nieprawidłowy Mail!";
+        elMail.focus;
+        elMail.value = "";
+    }
+}
+
+przycisk.addEventListener("click", sprawdzKod);
+przycisk1.addEventListener("click", sprawdzMail);
