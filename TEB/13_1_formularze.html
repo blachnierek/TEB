@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularze</title>
+
+</head>
+<body>
+ <form name="suwak">
+     <input type="range" id="suwak" list="procent">
+     <datalist id="procent">
+         <option value="0" label="0%"></option>
+         <option value="10" label="10%"></option>
+         <option value="20" label="20%"></option>
+         <option value="30" label="30%"></option>
+         <option value="40" label="40%"></option>
+         <option value="50" label="50%"></option>
+         <option value="60" label="60%"></option>
+         <option value="70" label="70%"></option>
+         <option value="80" label="80%"></option>
+         <option value="90" label="90%"></option>
+         <option value="100" label="100%"></option>
+         <datalist id="strony">
+             <option value="http://wp.pl">
+             <option value="http://facebook.pl">
+             <option value="http://o2.pl">
+             <option value="http://onet.pl">
+         </datalist>
+
+
+     </datalist>
+
+
+ </form>
+ <hr>
+
+  <form id="przeglodarka">
+      <label for="mojaPrzeglodarka">Wybierz Przeglodarke</label>
+      <input list="p" id="przeglodarka" name="mojaPrzeglodarka">
+      <datalist id="p">
+          <option value="Chrome">
+          <option value="Firefox">
+          <option value="Opera">
+          <option value="Safari">
+
+
+
+      </datalist>
+
+
+  </form>
+   <hr>
+   <h3>Linia</h3>
+   <meter min="30" max="43" value="37">Temperatura ciała</meter>
+   <h3>Temperatura 2</h3>
+   <meter low="30" high="43" max="50" value="35"></meter>
+   <hr>
+   <form>
+       <input type="text" placeholder="Janusz" required autofocus name="Imie" autocomplete="off" >
+       <input type="text" placeholder="Janusz" required autofocus name="Imie" >
+       <input type="submit" id="przycisk3" value="Wyślij">
+       <input type="tel" placeholder="666 777 888" name="telKom" pattern="[0-9 \-+()]{9,20}">
+
+
+   </form>
+
+   <hr>
+   <input type="text" name="wyborOwoc" list="owoc">
+   <datalist id="owoc" name="owoc">
+      <select name="owoc">
+       <option value="jabłko">Jabłko</option>
+       <option value="Banan">Banan</option>
+       <option value="ogurek">ogurek</option>
+       </select>
+
+
+
+
+   </datalist>
+
+
+
+    <script src="js/13_formularze.js"></script>
+</body>
+</html>
