@@ -16,6 +16,7 @@ function rozmiar(){
         let w = elWys.value;
         elBlok.style.height = sz + "px";
         elBlok.style.width = w + "px";
+        elBlok.style.left = "200px";
         console.log(sz);
 }
 

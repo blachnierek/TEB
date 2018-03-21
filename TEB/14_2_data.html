@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Objekty</title>
+</head>
+<body>
+   <script>
+    var start = Date.now();
+
+       for (var i=0; i<20000; i++)
+           for (var j=0; j<10000; j++)
+
+               var stop = Date.now();
+
+       document.write("Start: " + start + "<br>");
+       document.write("Stop: " + stop + "<br>");
+
+       var czas = (stop - start);
+       document.write("Czas wykonywania skryptu: " + czas/1000 + "s");
+
+    </script>
+
+</body>
+</html>

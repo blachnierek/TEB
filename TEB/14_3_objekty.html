@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Objekty</title>
+</head>
+<body>
+   <script>
+    var start = new Date();
+
+       for (var i=0; i<2000; i++)
+           for (var j=0; j<10000; j++)
+
+               var stop = new Date();
+
+       document.write("Start: " + start + "<br>");
+       document.write("Stop: " + stop + "<br>");
+
+       var czas = stop.getTime(); - start.getTime();
+       document.write("Różnica czasów" + czas/1000 + "s");
+
+    </script>
+
+</body>
+</html>

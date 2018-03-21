@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Data i czas</title>
+    <script>
+        function odliczanie(){
+
+
+        var teraz = new Date();
+/*        document.write(teraz);*/
+
+        var dzien = teraz.getDate(); //dzien miesiąca
+        var miesiac = teraz.getMonth() + 1;
+        var rok = teraz.getFullYear();
+        var godzina = teraz.getHours();
+        if (godzina < 10){
+            godzina = "0" + godzina;
+        }
+        var minuta = teraz.getMinutes();
+        if (minuta < 10){
+            minuta = "0" + minuta;
+        }
+        var sekunda = teraz.getSeconds();
+        if (sekunda < 10){
+            sekunda = "0" + sekunda;
+        }
+        var dzienTygodnia = teraz.getDay();
+
+        switch(dzienTygodnia){
+            case 1:
+                dzienTygodnia = "Poniedziałek";
+                break;
+            case 2:
+                dzienTygodnia = "Wtorek";
+                break;
+            case 3:
+                dzienTygodnia = "Sroda";
+                break;
+            case 4:
+                dzienTygodnia = "Czwartek";
+                break;
+            case 5:
+                dzienTygodnia = "Piątek";
+                break;
+            case 6:
+                dzienTygodnia = "Szusty Dzień Tygodnia";
+                break;
+            case 7:
+                dzienTygodnia = "Niedziela";
+                break;
+        }
+
+
+        switch(miesiac){
+            case 1:
+                miesiac = "Styczeń";
+                break;
+            case 2:
+                miesiac = "Luty";
+                break;
+            case 3:
+                miesiac = "Marzec";
+                break;
+            case 4:
+                miesiac = "Kwiecien";
+                break;
+            case 5:
+                miesiac = "Maj";
+                break;
+            case 6:
+                miesiac = "Czerwiec";
+                break;
+            case 7:
+                miesiac = "Lipiec";
+                break;
+            case 8:
+                miesiac = "Sierpień";
+                break;
+            case 9:
+                miesiac = "Wrzesień";
+                break;
+            case 10:
+                miesiac = "Październik";
+                break;
+            case 11:
+                miesiac = "Listopad";
+                break;
+            case 12:
+                miesiac = "Grudzien";
+                break;
+
+
+
+        }
+
+
+
+        document.getElementById("data").innerHTML = dzien + " " + miesiac + " " + rok + " " + godzina + ":" + minuta + ":" + sekunda + " | " + dzienTygodnia;
+
+
+        document.getElementById("data");}
+                        setTimeout("odliczanie()",1000);
+    </script>
+</head>
+<body onload="odliczanie()">
+
+    <div id="data"></div>
+
+
+
+</body>
+</html>

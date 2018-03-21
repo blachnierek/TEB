@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Objekty</title>
+</head>
+<body>
+    <script>
+        var fiat = {
+            marka: "Fiat",
+            model: "126p",
+            rok: 1984,
+            kolor: "czerowny",
+            przebieg: 20000,
+            wyswietl: function(){
+           //     document.write("Twoje auto: " + fiat.marka); można ale lepiej jest poniżej
+                document.write("Twoje auto: " + this.marka + " ,Model: " + this.model);
+            }
+        };
+        //w ostatnim nie może być przecinek
+//        document.write(fiat.kolor)
+
+        if(fiat.przebieg < 100000){
+            document.write("Idealny Przebieg <br>");
+        }
+
+        fiat.wyswietl();
+
+/*        zad. 1 utwórz 2 objekty o nazwach jan, agata. Objektym mają wspólne właściwości imię, nazwisko, płeć, wiek, waga.
+        Utwórz zmienną sredniWiek oraz sredniaWaga i wyświetl informacje na ekranie.
+        */
+
+        var Jan = {
+            imie: "Jan",
+            nazwisko: "Kowalski",
+            plec: "M",
+            wiek: 20,
+            waga: 120
+        }
+        var Agata = {
+            imie: "Agata",
+            nazwisko: "Kowalska",
+            plec: "K",
+            wiek: 30,
+            waga: 20
+        }
+
+        var sredniWiek = (Jan.wiek + Agata.wiek) / 2;
+        document.write("<br><br>Średni wiek wynosi: " + sredniWiek);
+
+
+        var sredniaWaga = (Jan.waga + Agata.waga) / 2;
+        document.write("<br>Średnia waga wynosi: " + sredniaWaga + " kg <br>");
+
+//###############################################################################################
+
+// Utworzenie obiektu za pomocą notacji liberału
+        var hotelLech = {
+            nazwa: "Lech",
+            pokoje: 100,
+            rezerwacje: 30,
+            wolnePokoje: function(){
+                return this.pokoje - this.rezerwacje;
+            }
+        };
+
+
+        var nazwa = hotelLech.nazwa;
+        var pokoje = hotelLech.wolnePokoje();
+
+        document.write("Hotel: " + nazwa + " ma " + pokoje + " wolne pokoje");
+
+        console.log(hotelLech);
+
+
+//Utworzenie objektu za pomocą notacji z użyciem konstruktora
+
+        var hotelMerkury = new Object();
+        hotelMerkury.nazwa = "Merkury";
+        hotelMerkury.pokoje = 120;
+        hotelMerkury.rezerwacje = 80;
+        hotelMerkury.wolnePokoje = function() {
+            return this.pokoje - this.rezerwacje;
+        }
+
+        delete hotelMerkury.nazwa;
+        hotelMerkury.nazwa = "Nowy Hotel";
+        document.write(hotelMerkury.nazwa);
+
+        //##############################################################################################
+
+        //Utworzenie wielu objeltów za pomocą notacji liberału z użyciem konstruktora
+
+        function Hotel(nazwa, pokoje, rezerwacje){
+            this.nazwa = nazwa;
+            this.pokoje = pokoje;
+            this.zarezerwowane = rezerwacje;
+            this.wolnePokoje = function(){
+                return this.poloje - this.zarezerwowane;
+            }
+        }
+
+        var szeraton = new Hotel("szeraton", 200, 42);
+        document.write(szeraton.nazwa);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>
