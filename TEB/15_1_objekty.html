@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Objekty</title>
+</head>
+<body>
+    <div id="dane"></div>
+
+    <script>
+//tworzenie objektu za pomocą literału
+
+        var janusz =  {
+            wzrost:  175,
+            waga: 70,
+            miejsceUrodzenia:  "Poznań",
+            plec:  "m"
+        };
+
+console.log(janusz.wzrost);
+
+var auto = {
+    marka: "opel",
+    model: "zafira",
+    predkosc: 180,
+    wyswietl() {
+       // document.write("marka: " + auto.marka + " Model: " + auto.model)
+        document.write("marka: " + this.marka + " Model: " + this.model)
+    }
+};
+
+
+        auto.wyswietl();
+
+        //###############################################
+
+        var ksiazka = {
+          tytul: "Pan Tadeusz",
+            wydana: 1834,
+            gatunek: "poemat literacki",
+            autor: {
+                imie: "Adam",
+                nazwisko: "Mickiewicz",
+                wyswietlDane() {
+                    return "Imię: " + this.imie + " Nazwisko: " + this.nazwisko;
+                }
+            }
+        };
+
+        console.log(ksiazka.autor.imie);
+        console.log(ksiazka["autor"]["nazwisko"]);
+        console.log(ksiazka.autor["nazwisko"]);
+
+        var klucz = "imie";
+        console.log(ksiazka["autor"][klucz]);
+
+        var elDane = document.getElementById("dane");
+
+        elDane.innerHTML = ksiazka.autor.wyswietlDane();
+    //#######################################################################
+
+        var produkt = {
+
+        };
+
+        //sprawdzamy czy wlasciwosc istnieje
+
+
+        console.log(typeof(produkt.nazwa));
+
+        //dodawanie wkasciwosci i metod do obiektu
+
+        produkt.nazwa = "Pralaka";
+        produkt.firma = "Bosh";
+        produkt.waga = 8;
+        produkt.cena = 1500;
+        produkt.wyswietl = function(){
+            return "<br><br>Nazwa produktu: " + this.nazwa + " <br>Firma produktu: " + this.firma + " <br>Waga produktu: " + this.waga + " <br>Cena produktu: " + this.cena
+        }
+        console.log(typeof(produkt.nazwa)); //string
+        console.log(typeof(produkt.wyswietl)); //string
+
+        delete produkt.waga;
+        document.write(produkt.wyswietl());
+
+
+        //##################################################################
+
+        function Hotel(nazwa, pokoje, pokojeZarezerwowane){
+            this.nazwa = nazwa;
+            this.pokoje = pokoje;
+            this.pokojeZarezerwowane = pokojeZarezerwowane;
+            this.wolnePokoje = function(){
+                return this.pokoje - this.pokojeZarezerwowane;
+            }
+        };
+
+
+        var hilton = new Hotel("Hilton", 200, 115);
+
+        document.write("<br><br>Wolne Pokoje w hotelu Hilton :" + hilton.wolnePokoje());
+
+
+
+        function Osoba(imie, nazwisko, wiek, waga){
+            this.imie = imie;
+            this.nazwisko = nazwisko;
+            this.wiek = wiek;
+            this.waga = waga;
+            this.wyswietl = function(){
+                return "<br>Imię: " + this.imie + "<br> Nazwisko: " + this.nazwisko + "<br> Wiek: " + this.wiek +  " wiosen" + "<br>Waga: " + this.waga + " kg";
+            }
+
+        }
+
+        var Janusz = new Osoba("Janusz", "Kowalski", 54, 70);
+
+        document.write("<br><br>Dane: " + Janusz.wyswietl());
+
+
+
+
+
+
+    </script>
+</body>
+</html>

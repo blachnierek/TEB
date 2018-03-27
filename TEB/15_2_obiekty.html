@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Obiekty - formularz</title>
+</head>
+<body>
+   <form>
+        <input id="imie" type="text" placeholder="imie" autofocus><br><br>
+        <input id="nazwisko" type="text" placeholder="nazwisko" ><br><br>
+        <input id="waga" type="numer" placeholder="waga" ><br><br>
+        <input id="wiek" type="number" placeholder="wiek" ><br><br>
+
+
+   </form>
+       <button id="gozik" > Wyślij</button>
+       <div id="komunikat"></div>
+
+
+
+
+
+
+
+
+    <script>
+        var elImie = document.getElementById("imie");
+        var elNazwisko = document.getElementById("nazwisko");
+        var elWiek = document.getElementById("wiek");
+        var elWaga = document.getElementById("waga");
+        var elGozik = document.getElementById("gozik");
+        var elKomunikat = document.getElementById("komunikat");
+
+
+       function Osoba(imie, nazwisko, wiek, waga){
+            this.imie = imie;
+            this.nazwisko = nazwisko;
+            this.wiek = wiek;
+            this.waga = waga;
+            this.wyswietl = function(){
+                return "<br>Imię: " + this.imie + "<br> Nazwisko: " + this.nazwisko + "<br> Wiek: " + this.wiek +  " wiosen" + "<br>Waga: " + this.waga + " kg";
+            }
+
+        }
+
+
+
+      function wyswietlDane(){
+          var a = elImie.value;
+          var b = elNazwisko.value;
+          var c = elWiek.value;
+          var d = elWaga.value;
+
+            var dane = new Osoba(a,b,c,d);
+           elKomunikat.innerHTML = dane.wyswietl()
+      }
+
+
+
+gozik = addEventListener("click", wyswietlDane);
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zdarzenia</title>
+</head>
+<body>
+    <button id="el">Pokaz</button>
+    <div id="blok"></div>
+    <script>
+        var przycisk = document.getElementById("el");
+
+    function pokaz () {
+        console.log(this);
+    }
+
+
+
+    przycisk.addEventListener("click", function(){
+        blok.textContent += " click"
+            });
+    przycisk.addEventListener("mousedown", function(){
+        blok.textContent += " Naciśnięcie myszy"
+ });
+    przycisk.addEventListener("mouseup", function(){
+        blok.textContent += "Puszczenie przycisku myszy"
+            });
+
+            przycisk.addEventListener("mouseover", function(){
+        blok.textContent += " mouse over " //najechanie na element
+            });
+
+        przycisk.addEventListener("dblclick", function(){
+            blok.textContent = ""           //podwójne kliknięcie
+            });
+        przycisk.addEventListener("mouseout", function(){
+            blok.textContent += " mouse out "  //opuszczenie elementu
+            });
+
+
+        przycisk.addEventListener("mousemove", function(){
+            blok.textContent += " mouse move "
+            });
+    </script>
+
+</body>
+</html>
