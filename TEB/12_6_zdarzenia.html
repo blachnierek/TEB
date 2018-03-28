@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zdarzenia </title>
+    <style>
+        body {
+            background-color: darkorange
+        }
+        #kwadrat {
+            height: 100px;
+            width: 100px;
+            background-color: dimgrey;
+            position: absolute;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+        #przyciski {
+            margin: auto;
+            padding: 10px;
+            height: 20px;
+            width: 200px;
+            background-color: dimgray;
+        }
+    </style>
+</head>
+<body>
+  <div id="kwadrat"></div>
+  <div id="przyciski">
+    <button id="gora">Góra</button>
+    <button id="dol">Dół</button>
+    <button id="lewo">Lewo</button>
+    <button id="prawo">Prawo</button>
+    </div>
+
+    <script>
+    var K = document.getElementById("kwadrat");
+    var G = document.getElementById("gora");
+    var D = document.getElementById("dol");
+    var L = document.getElementById("lewo");
+    var P = document.getElementById("prawo");
+    var x_poz = 10;
+    var y_poz = 10;
+
+    function up(){
+        if(K.offsetTop  != 0){
+            y_poz += -10;
+            K.style.top = y_poz + "px";
+
+        }else{
+            G.disabled = true;
+        }
+    }
+        var wu = window;
+        var wys = wu.innerHeight - 100;
+        console.log(wys);
+        var szer = wu.innerWidth - 100;
+
+        function down(){
+        if(K.offsetTop == 0)
+            G.disabled = false;
+        if(K.offsetTop < wys){
+            y_poz += +10;
+            console.log(K.style.top);
+            K.style.top = y_poz + "px";
+            }
+        }
+
+        function left(){
+            if(P.disabled){
+                P.disabled = false;
+            }
+        if(K.offsetLeft != 0){
+            x_poz += -10;
+            console.log(K.style.top);
+            K.style.left = x_poz + "px";
+        }else{
+            L.disabled = true;
+                }
+            }
+
+        function right(){
+        if(K.offsetLeft == 0)
+            L.disabled = false;
+        if(K.offsetLeft < szer){
+            x_poz += +10;
+            console.log(K.style.top);
+            K.style.left = x_poz + "px";
+            }else{
+                P.disabled = true;
+            }
+        }
+
+
+
+
+
+
+
+    P.addEventListener("click", right);
+    L.addEventListener("click", left);
+    D.addEventListener("click", down);
+    G.addEventListener("click", up);
+
+    </script>
+
+
+
+</body>
+</html>
