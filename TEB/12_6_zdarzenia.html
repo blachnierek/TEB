@@ -19,7 +19,7 @@
             margin: auto;
             padding: 10px;
             height: 20px;
-            width: 200px;
+            width: 260px;
             background-color: dimgray;
         }
     </style>
@@ -31,6 +31,7 @@
     <button id="dol">Dół</button>
     <button id="lewo">Lewo</button>
     <button id="prawo">Prawo</button>
+    <button id="reset">Reset</button>
     </div>
 
     <script>
@@ -39,6 +40,7 @@
     var D = document.getElementById("dol");
     var L = document.getElementById("lewo");
     var P = document.getElementById("prawo");
+    var R = document.getElementById("reset");
     var x_poz = 10;
     var y_poz = 10;
 
@@ -91,12 +93,21 @@
             }
         }
 
+        function resettt(){
+            x_poz = 0;
+            y_poz = 0;
+            K.style.top = x_poz + "px";
+            K.style.left = y_poz + "px";
+            G.disabled = false;
+            D.disabled = false;
+            L.disabled = false;
+            P.disabled = false;
+            }
 
 
 
 
-
-
+    R.addEventListener("click", resettt);
     P.addEventListener("click", right);
     L.addEventListener("click", left);
     D.addEventListener("click", down);
