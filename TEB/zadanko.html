@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator</title>
+    <style>
+        body{
+            background-color: #8e8e8e;
+        }
+        #Baner{
+            height: 105px;
+            width: 101.3%;
+            background-color: #fdcd00;
+            margin-top: -10px;
+            margin-left: -10px;
+            font-size: 60px;
+            padding-top: 30px;
+            padding-left: 30px;
+
+        }
+
+    </style>
+</head>
+<body>
+<div id="Baner">Kalkluator<sub><i> by Maxym</i></sub></div><br>
+<form>
+Wprowdź Pierwszą liczbę: <input id="pole1" placeholder="Cyfra 1" type="number"autofocus><br><br>
+Wprowadź Drugą liczbę: <input id="pole2"placeholder="Cyfra 2" type="number"><br><br>
+</form>
+<button id="gozik1">Dodawanie</button>
+<button id="gozik2">Odejmowanie</button>
+<button id="gozik3">Mnożenie</button>
+<button id="gozik4">Dzielenie</button><br><br>
+
+<div id="komunikat"></div>
+
+<hr>
+<script>
+var elPole1 = document.getElementById("pole1");
+var elPole2 = document.getElementById("pole2");
+var elGozik1 = document.getElementById("gozik1");
+var elGozik2 = document.getElementById("gozik2");
+var elGozik3 = document.getElementById("gozik3");
+var elGozik4 = document.getElementById("gozik4");
+var elKomunikat = document.getElementById("komunikat");
+
+
+
+
+function dodawanie(){
+    if(elPole1.value != "" && elPole2.value != ""){
+        var x = parseFloat(elPole1.value);
+        var y = parseFloat(elPole2.value);
+        elKomunikat.innerHTML = "Wynik dodawania to: " + (x + y);
+    }else{
+        elKomunikat.innerHTML = "Wprowadź liczby";
+    }
+}
+
+function odejmowanie(){
+    if(elPole1.value != "" && elPole2.value != ""){
+         var x = parseFloat(elPole1.value);
+         var y = parseFloat(elPole2.value);
+        elKomunikat.innerHTML = "Wynik odejmowania to: " + (x - y);
+    }else{
+        elKomunikat.innerHTML = "Wprowadź liczby";
+    }
+}
+function mnożenie(){
+    if(elPole1.value != "" && elPole2.value != ""){
+         var x = parseFloat(elPole1.value);
+         var y = parseFloat(elPole2.value);
+        elKomunikat.innerHTML = "Wynik mnożenia to: " + (x * y);
+    }else{
+        elKomunikat.innerHTML = "Wprowadź liczby";
+    }
+}
+function dzielenie(){
+    if(elPole1.value != "" && elPole2.value != "")
+         var x = parseFloat(elPole1.value);
+         var y = parseFloat(elPole2.value);
+
+    if(y != 0)
+        elKomunikat.innerHTML = "Wynik Dzielenia to: " + (x / y);
+    else
+        elKomunikat.innerHTML = "NIE WOLNO DZIELIĆ PRZEZ ZERO!!!";
+}
+
+
+
+    elGozik1.addEventListener("click", dodawanie);
+    elGozik2.addEventListener("click", odejmowanie);
+    elGozik3.addEventListener("click", mnożenie);
+    elGozik4.addEventListener("click", dzielenie);
+
+
+</script>
+</body>
+</html>
