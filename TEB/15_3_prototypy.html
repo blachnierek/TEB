@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Prototypy</title>
+</head>
+<body>
+
+    <script>
+    function pole(a,b,c){
+        return a*b;
+    }
+
+ //       document.write(pole(2,3));
+        console.log(pole.length);
+        console.log(pole.constructor);
+        console.log(typeof(pole));
+        console.log(typeof(pole.prototype)); //object
+
+
+
+        //#########################################
+
+        //dodawanie pól i metod przy użyciu prototypów
+
+
+        function Zabawka(nazwa, kolor, cena){
+            this.nazwa = nazwa;
+            this.kolor = kolor;
+            this.cena = cena;
+            this.wypisz = function(){
+                return "Nazwa: " + this.nazwa + ", Kolor: " + this.kolor + ", Cena: " + this.cena;
+            }
+        }
+
+        Zabawka.prototype.kraj = "Polska";
+        Zabawka.prototype.informacja = function(){
+            return ", Kraj pochodzenia: " + this.kraj;
+        }
+
+        var rower = new Zabawka("Rower BMX", "Zielony", 5300);
+
+        document.write(rower.nazwa + "<hr>");
+        document.write(rower.wypisz());
+        rower.kraj = "Chiny" + "<br>";
+        document.write(rower.informacja());
+
+
+        //dziedziczenie
+        function Figura(){
+            this.nazwa = "figura";
+            this.wyswietl = function(){
+                return this.nazwa;
+            }
+        }
+        function Figura3D(){
+            this.nazwa = " figura 3D";
+        }
+
+
+        function Trojkat(podstawa, wysokosc){
+            this.nazwa = "Trojkat";
+            this.podstawa = podstawa;
+            this.wysokosc = wysokosc;
+            this.pole = function(){
+               return this.podstawa * this.wysokosc / 2;
+            }
+        }
+
+        Trojkat.prototype = new Figura();
+
+        var t = new Trojkat(3, 4);
+        document.write("<hr>Pole Trójkąta wynosi: " + t.pole());
+        document.write("<hr>");
+        t1 = new Figura();
+        document.write(t1.wyswietl());
+        //document.write(t.wyswietl());
+
+    </script>
+
+</body>
+</html>

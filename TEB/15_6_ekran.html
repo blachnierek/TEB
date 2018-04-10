@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Ekran</title>
+</head>
+<body>
+    <script>
+    var glebiaKolorow = window.screen.colorDepth;
+    var szerokosc = window.screen.width;
+    var maxSzerokosc = window.screen.availWidth;
+    var wysokosc = window.screen.height;
+    var maxWysokosc = window.screen.availHeight;
+    var okno =  window.open("http://zbluzgaj.pl", "bluzgator", "width=400, height=400, resizable=yes, left=500, top=300");
+
+
+
+
+        console.log(glebiaKolorow);
+        console.log(szerokosc);
+        console.log(maxSzerokosc);
+        console.log(wysokosc);
+        console.log(maxWysokosc);
+
+    document.write('<input type="submit" id="p" value="Zamknij Okno">');
+
+        function zamknij(){
+            okno.close();
+        }
+        p.addEventListener("click", zamknij);
+
+
+    </script>
+</body>
+</html>

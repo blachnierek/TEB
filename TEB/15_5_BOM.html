@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+</head>
+<body>
+
+
+       <input type="submit" id="p" value="Odśwież stronę">
+       <input type="submit" id="p1" value="strona1">
+       <input type="submit" id="p2" value="strona2">
+
+
+    <script>
+    //BOM - Browser Object Model
+
+    var imie = "Janusz";
+        console.log(imie);
+        console.log(window.imie);
+/*    var wiek = prompt("Podaj Wiek");
+        wiek = window.parseInt(wiek);*/
+
+        document.write(window.navigator.userAgent);
+
+        for (var i in location) document.write(i + "=" + location[i] + "<br>");
+
+
+        function odswiez(){
+            window.location.reload();
+        }
+
+
+
+
+        function zmienStrone(){
+            window.location.assign("http://wp.pl");
+        }
+        function zmienStrone1(){
+            window.location.replace("http://onet.pl");
+        }
+
+
+
+    p.addEventListener("click", odswiez);
+    p1.addEventListener("click", zmienStrone);
+    p2.addEventListener("click", zmienStrone1);
+
+
+    console.log(window.history.length);
+    document.write("<br>");
+    document.write('<input type="submit" value="15_5_1_historia" id="historia">');
+
+    function history(){
+        location.href = "15_5_1_historia.html";
+    }
+        historia.addEventListener("click", history);
+
+    </script>
+</body>
+</html>

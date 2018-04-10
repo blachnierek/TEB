@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Prototypy- zadanie</title>
+</head>
+<body>
+    <script>
+    function Samochod(marka, model, predkosc){
+        this.marka = marka;
+        this.model = model;
+        this.predkosc = predkosc;
+        this.wyswietl = function(){
+            return "Marka: " + this.marka + ", Model: " + this.model + ", Prędkośc: " + this.predkosc + "<br>";
+        }
+    }
+    function Ciezarowy(zaladunek, naczepa){
+        this.zaladunek = zaladunek;
+        this.naczepa = naczepa;
+        this.wypisz = function(){
+            if(naczepa == 1){
+                naczepa = " TAK"
+            }else{
+                naczepa = " NIE"
+            }
+            return "<br>Załadunek: " + this.zaladunek + ", Naczepa: " + naczepa;
+        }
+    }
+    Ciezarowy.prototype = new Samochod();
+
+    var man = new Ciezarowy(25000, 1);
+    document.write("<h3>Man</h3>");
+    document.write(man.wypisz());
+    man.marka = "Man";
+    man.model = "xyz";
+    man.predkosc = 170;
+
+    var auto  = new Samochod("a", "a", 150);
+    document.write(auto.wyswietl());
+    document.write(man.wyswietl());
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
