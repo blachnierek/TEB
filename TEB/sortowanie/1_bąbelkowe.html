@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Sortowanie Bąbelkowe</title>
+</head>
+<body>
+<h2>Podaj Liczby do posortowania: </h2>
+<form>
+    <input type="number" id="l" placeholder="liczba">
+</form>
+    <button id="p">dodaj</button>
+    <button id="w">Wyświetl tablicę</button>
+<script src="js/1_b%C4%85belkowe.js"></script>
+<script>
+var l = document.getElementById("l");
+var p = document.getElementById("p");
+var w = document.getElementById("w");
+
+var t = [];
+
+function dodaj(){
+    let x = Number(l.value);
+    t.push(x);
+    console.log(t);
+}
+
+    p.addEventListener("click", dodaj);
+    w.addEventListener("click", wys);
+
+
+
+
+
+
+</script>
+</body>
+</html>
