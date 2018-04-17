@@ -1,0 +1,10 @@
+#tabela1, #tabela2, #tabela3 {
+    width: 400px;
+    border: 1px solid;
+    border-collapse: collapse;
+}
+th, tr, td {
+    width: 400px;
+    border: 1px solid;
+    text-align: center;
+}
