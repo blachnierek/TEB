@@ -1,0 +1,54 @@
+body {
+    background-color: #ff5252;
+}
+
+
+div {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    color: aliceblue;
+    text-align: center;
+    font-size: 25px;
+    background-color: black;
+    animation: obrot3D3 1s linear infinite;
+    filter: opacity(50%);
+
+}
+
+@keyframes przesunXY {
+    0% {transform: translateX(0) translateY(0);}
+    100% {transform: translateX(300px) translateY(100px);}
+}
+
+
+#blok {
+    width: 300px;
+    height: 150px;
+    background-color: aqua;
+}
+
+
+@keyframes obrot3D{
+    0% {transform: perspective(500px) rotate3d(1,1,0,0)}
+        100% {transform: perspective(500px) rotate3d(1,1,0,360deg)}}
+
+@keyframes obrot3D1{
+    0% {transform: perspective(500px) rotate3d(1,0,0,0)}
+        100% {transform: perspective(500px) rotate3d(0,1,0,360deg)}}
+
+@keyframes obrot3D2{
+    0% {transform: perspective(500px) rotate3d(2,2,2,2)}
+        100% {transform: perspective(500px) rotate3d(3,2,1,360deg)}}
+
+
+@keyframes obrot3D3{
+    0% {transform: perspective(500px) rotate3d(1,0,0,0)}
+        100% {transform: perspective(500px) rotate3d(1,0,0,360deg)}}
+/*
+@keyframes obrot3D{
+    0% {transform: perspective(500px) rotate3d(1,1,0,0)}*/
+
+
+
+}
